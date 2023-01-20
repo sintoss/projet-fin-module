@@ -1,0 +1,346 @@
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center">
+  <div class="container" data-aos="zoom-in" data-aos-delay="100">
+    <h1>Projet Fin De Module</h1>
+    <p>EHEIO <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer">GI5-2023  </span></p>
+    <div class="social-links">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    </div>
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Le projet consiste à recevoir des données envoyer par un capteur DH11 à l'aide d'un micro-contrôleur ESP8266
+          et
+          les visualiser de différentes manières</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="assets/img/temperature.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content">
+
+          <div class="container py-5 h-100">
+
+            <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+              <div class="col-md-9 col-lg-7 col-xl-5">
+
+                <div class="card mb-4 gradient-custom"
+                     style="border-radius: 25px;box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
+                  <div class="card-body p-4">
+
+                    <div id="demo1" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                      <ul class="carousel-indicators mb-0">
+                        <li data-target="#demo1" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo1" data-slide-to="1"></li>
+                        <li data-target="#demo1" data-slide-to="2"></li>
+                      </ul>
+                      <!-- Carousel inner -->
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="d-flex justify-content-between mb-4 pb-2">
+                            <div>
+                              <h2 class="display-2"><strong>{{lastTemp}}°c</strong></h2>
+                              <p class="text-muted mb-0"><strong>Depuis</strong> {{lastDate|date:"full"}}</p>
+                            </div>
+                            <div>
+                              <img src="assets/img/heat.png"
+                                   width="100px">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Chart</h2>
+        <p></p>
+      </div>
+      <div id="chart">
+        <apx-chart
+          [series]="chartOptions.series!"
+          [chart]="chartOptions.chart!"
+          [xaxis]="chartOptions.xaxis!"
+          [stroke]="chartOptions.stroke!"
+          [tooltip]="chartOptions.tooltip!"
+          [dataLabels]="chartOptions.dataLabels!"
+        ></apx-chart>
+      </div>
+    </div>
+  </section><!-- End Resume Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>DataTable</h2>
+        <p></p>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col" style="width:20%">#</th>
+          <th scope="col" style="width:30%">Temperature</th>
+          <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of dataTable">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.temperature}}°C</td>
+          <td>{{item.date | date:"full"}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>Avec notre solution dédiée, vous n'aurez jamais à utiliser l'ancienne méthode de vérification de la
+          température <br>
+          Avec différentes solutions, vous pouvez choisir celle qui vous convient Telegram, Mail et
+          WhatsApp.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box iconbox-blue">
+            <div class="icon">
+              <img src="assets/img/telegram.png" width="100" height="100">
+            </div>
+            <h4><a href="">Telegram</a></h4>
+            <p>Fatigué de vérifier la température à chaque fois ? <br>Soyez averti dans votre Telegram</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box iconbox-orange ">
+            <div class="icon">
+              <img src="assets/img/gmail.png" width="100" height="100">
+            </div>
+            <h4><a href="">Gmail</a></h4>
+            <p>Fatigué de vérifier la température à chaque fois ? <br>Soyez averti dans votre email</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box iconbox-pink">
+            <div class="icon">
+              <img src="assets/img/whatsapp.png" width="100" height="100">
+            </div>
+            <h4><a href="">Whatsapp</a></h4>
+            <p>Fatigué de vérifier la température à chaque fois ? <br>Soyez averti dans votre WhatsApp</p>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Remerciements</h2>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/img.png" class="testimonial-img" alt="">
+              <h3>EL MOUSSATI Ali</h3>
+              <h4>Enseignant chercheur</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Nous vous remercions d'avoir enrichi nos connaissances et de nous avoir guidé durant toute cette période
+                . <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+              <h3>Sara Wilsson</h3>
+              <h4>Designer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+              <h3>Jena Karlis</h3>
+              <h4>Store Owner</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor
+                labore quem eram duis noster aute amet eram fore quis sint minim.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim
+                dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+              <h3>John Larson</h3>
+              <h4>Entrepreneur</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section><!-- End Testimonials Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="row mt-1">
+
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>Rue de la liberté – Hay Al Hikma–Oujda–Maroc</p>
+            </div>
+
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>younes.amara00@gmail.com</p>
+              <p>mostafatahri123@gmail.com</p>
+            </div>
+
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+212 762750416</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0">
+
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
